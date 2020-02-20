@@ -44,7 +44,7 @@ class SentController extends Controller
                      ->subject('Hello There');
             $message->from('myEmail@test.com')
                     ->to('iljimae.ic@gmail.com', 'John Smith')
-                    s->subject('Welcome!');
+                    ->subject('Welcome!');
             });
             return redirect('/create')
                     ->with('message', 'Email Sent');
