@@ -83,7 +83,8 @@
     <!-- SUMMERNOTE -->
     <script src="js/plugins/summernote/summernote-bs4.js"></script>
 
-    <script>
+
+    {{-- <script>
     $(document).ready(() => {
         $('.summernote').summernote();
 
@@ -96,30 +97,8 @@
                 })
             });
 
-            // function myFunction() {
-            //     var inpObj = document.getElementById("#body");
-            //     if (!inpObj.checkValidity()) {
-            //         window.document.getElementById("#sent").addEventListener("click", function(){
-            //             alert("clicked");
-            //             }, false);
-            //         }
-            //     }
-                // document.getElementById("sent").addEventListener("click", myFunction);
-                // function myFunction() {
-                //     var inpObj = document.getElementById("#body");
-                //     if (!inpObj.checkValidity()) {
-                //         alert ("Hello World!");
-                //     }
 
-                // alert ("Hello World!");
-                // }
-
-            // document.getElementById("#sent").addEventListener("click", function(){
-            //     alert("successfully")
-            //     }, false);
-
-
-     </script>
+     </script> --}}
 @endsection
 
 
