@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class SentController extends Controller
 {
+    // Show email
     public function index()
     {
         // die('hello');

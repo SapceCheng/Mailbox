@@ -32,12 +32,12 @@ class MailContentController extends Controller
     {
         // die('hello');
         // dump(request()->all());
-        $content = new Content();
-        $content->email = request('email');
-        $content->title = request('title');
-        $content->body= request('body');
+        // $content = new Content();
+        // $content->email = request('email');
+        // $content->title = request('title');
+        // $content->body= request('body');
 
-        $content->save();
+        // $content->save();
     }
 
     public function edit()
@@ -70,8 +70,8 @@ class MailContentController extends Controller
 
     public function archive()
     {
-        $content = content::onlyTrashed()->get();
-        return view('mailbox.archive',compact('content'));
+        // $content = content::onlyTrashed()->get();
+        // return view('mailbox.archive',compact('content'));
     }
 
     public function filter()

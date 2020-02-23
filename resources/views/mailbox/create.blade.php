@@ -22,10 +22,13 @@
 
     <form id="sendForm" method="POST" action="/create">
         @csrf
+        <input class="form-control" type="hidden" name="body" id="body" value="" />
+        {{-- <input class="form-control" type="hidden" name="body-length" id="body-length" value="" /> --}}
 
         <div class="form-group row"><label class="col-sm-2 col-form-label">To:</label>
 
-        <div class="col-sm-10"><input class="form-control" type="text" name="email" id="email" value="{{old('email')}}">
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="email" id="email" value="{{old('email')}}">
         @error('email')
         <p class="text-red-500 text-xs">{{$errors->first('email')}}</p>
         @enderror
@@ -41,15 +44,15 @@
             </div>
         </div>
 
-        {{-- <div class="mail-text h-200">
+        <div class="mail-text h-200">
             <div class="summernote"></div>
-        </div> --}}
+        </div>
 
-
+{{--
             <input class="form-control input @error('body') is danger @enderror" type="text" name="body" id="body" value="{{old('body')}}">
             @error('body')
             <p class="help is-danger">{{$errors->first('body')}}</p>
-            @enderror
+            @enderror --}}
             <div class="clearfix"></div>
             <div class="mail-body text-right tooltip-demo">
                 <button href="/create" id="send" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="send" type="submit" οnclick="myFunction()"><i class="fa fa-reply"></i>Send</button>
@@ -65,7 +68,7 @@
         </form>
 </div>
 @endsection
-
+#
 @section('script')
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -83,22 +86,15 @@
     <!-- SUMMERNOTE -->
     <script src="js/plugins/summernote/summernote-bs4.js"></script>
 
-
-    {{-- <script>
+    <script>
     $(document).ready(() => {
         $('.summernote').summernote();
 
-        $("send").click(() => {
-            const inputField = $("<input/>")
-                .prop('id', 'body')
-                .prop('type', 'hidden')
-                .val($('.summernote').summernote('code'));
-                $('.sendForm').append(inputField);
-                })
-            });
-
-
-     </script> --}}
+        $("#send").click(() => {
+            $("#body").val($('.summernote').summernote('code'));
+        })
+    });
+     </script>
 @endsection
 
 
